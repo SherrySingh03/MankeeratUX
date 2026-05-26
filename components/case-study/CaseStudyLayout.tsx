@@ -107,7 +107,7 @@ export default function CaseStudyLayout({
       </div>
 
       {/* Title + badge */}
-      <div className="flex items-start justify-between px-5 sm:px-10 mb-6">
+      <div className="flex items-center justify-between px-5 sm:px-10 mb-6">
         <h1
           className="leading-tight"
           style={{
@@ -119,7 +119,7 @@ export default function CaseStudyLayout({
           {title}
         </h1>
         {badge && (
-          <Image src={badge} width={80} height={10} alt="" className="shrink-0 mt-2" />
+          <Image src={badge} width={60} height={10} alt="" className="shrink-0 md:mt-2" />
         )}
       </div>
 
