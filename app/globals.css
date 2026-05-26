@@ -1,0 +1,47 @@
+/* Google Fonts must precede @import "tailwindcss" */
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-bitter: var(--font-bitter);
+  --font-outfit: var(--font-outfit);
+  --font-castoro: 'Castoro', serif;
+}
+
+/*
+  Custom resets go inside @layer base so they don't override
+  Tailwind's @layer utilities (unlayered CSS wins over any @layer).
+*/
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: #ffffff;
+    color: #1a1a1a;
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Hide native cursor on desktop */
+@media (min-width: 769px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Mobile: disable all CSS animations/transitions */
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
