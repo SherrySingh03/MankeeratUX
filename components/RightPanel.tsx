@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLenis } from '@/hooks/useLenis';
 import ProjectList from '@/components/ProjectList';
@@ -23,12 +24,7 @@ function Nav() {
       className="flex items-center justify-between mb-12"
       {...fadeUp(0)}
     >
-      {/* Logo: solid circle */}
-      <div
-        className="w-5 h-5 rounded-full shrink-0"
-        style={{ backgroundColor: '#FF57F9' }}
-        aria-label="Mankeerat Singh"
-      />
+      <Image src="/images/homepage/logo.png" width={28} height={28} alt="Mankeerat Singh" className="shrink-0" />
 
       <div className="flex items-center gap-7 text-sm text-neutral-500">
         <Link
