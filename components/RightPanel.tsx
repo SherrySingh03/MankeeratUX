@@ -61,8 +61,8 @@ function IntroSection() {
           {/* Name hover: English ↔ Punjabi */}
           <div className="group relative cursor-default mb-1 select-none">
             <h1
-              className="text-3xl font-bold leading-tight 
-                        opacity-100 hover:opacity-0 
+              className="text-3xl font-bold leading-tight
+                        opacity-100 group-hover:opacity-0
                         transition-opacity duration-300 pointer-events-none"
               style={{ fontFamily: 'var(--font-bitter), Georgia, serif' }}
               // {...fadeUp(0.1)}
