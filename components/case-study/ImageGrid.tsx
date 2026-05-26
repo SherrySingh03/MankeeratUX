@@ -17,7 +17,7 @@ export default function ImageGrid({ cols, images = [], aspect = '4/5' }: Props) 
 
   return (
     <div
-      className="my-10 grid gap-6"
+      className="my-10 grid md:gap-6 gap-2l, ll.."
       style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
     >
       {images.map((img, i) => (

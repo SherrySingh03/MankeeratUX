@@ -31,7 +31,7 @@ export default function KnowMeQPage() {
           <div className="border-t border-neutral-200" />
         </div>
 
-        <div className="flex gap-10">
+        <div className="md:flex gap-10">
           <p className="flex-1">
             KnowMeQ&apos;s ArchieCPL tool allows applicants to apply for credits for courses. Applicants
             can explore multiple CPL (Credit for Prior Learning) programs and apply for reviewing

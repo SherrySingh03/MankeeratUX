@@ -65,7 +65,7 @@ export default function CaseStudyLayout({
     <div className="min-h-screen bg-white">
 
       {/* Top nav */}
-      <header className="flex items-center justify-between px-10 py-8">
+      <header className="flex items-center justify-between px-5 sm:px-10 py-6 sm:py-8">
         <Link href="/">
           <div
             className="w-5 h-5 rounded-full"
@@ -74,11 +74,7 @@ export default function CaseStudyLayout({
           />
         </Link>
         <div className="flex items-center gap-7 text-sm text-neutral-500">
-          <Link
-            href="/about"
-            className="hover:text-neutral-900 transition-colors"
-            data-cursor="link"
-          >
+          <Link href="/about" className="hover:text-neutral-900 transition-colors" data-cursor="link">
             about
           </Link>
           <a
@@ -94,90 +90,91 @@ export default function CaseStudyLayout({
       </header>
 
       {/* Hero */}
-      <div ref={heroRef} className="px-10 mb-12 pt-4">
+      <div ref={heroRef} className="px-5 sm:px-10 mb-8 sm:mb-12 pt-2 sm:pt-4">
         <div
           className={`relative w-full rounded-2xl overflow-hidden ${heroFit === 'contain' ? 'bg-neutral-100' : 'bg-neutral-900'}`}
-          style={{ height: '60vh' }}
+          style={{ height: 'clamp(220px, 45vw, 60vh)' }}
         >
           <Image
             src={hero}
             alt={title}
             fill
-            className={heroFit === 'contain' ? 'object-contain p-6' : 'object-cover'}
+            className={heroFit === 'contain' ? 'object-contain p-4 sm:p-6' : 'object-cover'}
             sizes="(max-width: 768px) 100vw, 90vw"
             priority
           />
         </div>
       </div>
 
-      {/* Title + Role/Stats row */}
-      <div className="flex items-start justify-between px-10 mb-6">
+      {/* Title + badge */}
+      <div className="flex items-start justify-between px-5 sm:px-10 mb-6">
         <h1
           className="leading-tight"
           style={{
             fontFamily: 'var(--font-bitter), Georgia, serif',
             fontStyle: 'italic',
-            fontSize: '3rem',
+            fontSize: 'clamp(1.6rem, 4vw, 3rem)',
           }}
         >
           {title}
         </h1>
         {badge && (
-          <Image
-            src={badge}
-            width={80}
-            height={10}
-            alt=''
-          />
+          <Image src={badge} width={80} height={10} alt="" className="shrink-0 mt-2" />
         )}
       </div>
 
       {/* Divider */}
-      <div className="px-10 mb-10">
+      <div className="px-5 sm:px-10 mb-8 sm:mb-10">
         <div className="border-t border-neutral-200" />
       </div>
 
-      {/* Description */}
-      <div className="px-10 mr-20 mb-16 flex justify-between gap-30">
-        <div>
-          <p
-            className="text-xl text-neutral-600 leading-relaxed"
-            style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
-          >
-            {description}
-          </p>
-        </div>
-        <div>
-        <div className="flex items-baseline gap-3 justify-end">
+      {/* Description + Role/Stats */}
+      <div className="px-5 sm:px-10 mb-12 sm:mb-16 flex flex-col sm:flex-row justify-between gap-6 sm:gap-16">
+        <p
+          className="text-lg sm:text-xl text-neutral-600 leading-relaxed"
+          style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
+        >
+          {description}
+        </p>
+        <div className="shrink-0 flex flex-col gap-1 sm:items-end">
+          <div className="flex items-baseline gap-2 sm:gap-3">
             <span
-              className="text-3xl text-neutral-400"
+              className="text-2xl sm:text-3xl text-neutral-400"
               style={{ fontFamily: 'var(--font-bitter), Georgia, serif', fontStyle: 'italic' }}
             >
               Role
             </span>
-            <span className="text-lg text-neutral-700">{role}</span>
+            <span className="text-base sm:text-lg text-neutral-700">{role}</span>
           </div>
-          <div className="flex items-baseline gap-3 justify-end">
-            <span
-              className="text-3xl text-neutral-400"
-              style={{ fontFamily: 'var(--font-bitter), Georgia, serif', fontStyle: 'italic' }}
-            >
-              Stats
-            </span>
-            <span className="text-xl text-neutral-700">
-              <strong className="font-semibold">{stats}</strong>
-            </span>
-          </div>
-          </div>
+          {stats && (
+            <div className="flex items-baseline gap-2 sm:gap-3">
+              <span
+                className="text-2xl sm:text-3xl text-neutral-400"
+                style={{ fontFamily: 'var(--font-bitter), Georgia, serif', fontStyle: 'italic' }}
+              >
+                Stats
+              </span>
+              <span className="text-base sm:text-xl text-neutral-700">
+                <strong className="font-semibold">{stats}</strong>
+              </span>
+            </div>
+          )}
+        </div>
       </div>
-      
+
+      {/* Back link — mobile only */}
+      <div className="md:hidden px-5 mb-6">
+        <Link href="/" className="text-base text-neutral-400 hover:text-neutral-700 transition-colors" data-cursor="link">
+          ← Back
+        </Link>
+      </div>
 
       {/* Main: sticky nav + content */}
-      <div className="px-10 flex gap-0 pb-40">
+      <div className="px-5 sm:px-10 flex gap-0 pb-24 sm:pb-40">
 
-        {/* Sticky nav */}
+        {/* Sticky nav — desktop only */}
         <nav
-          className="sticky top-8 self-start shrink-0 pt-1 transition-opacity duration-300"
+          className="hidden md:block sticky top-8 self-start shrink-0 pt-1 transition-opacity duration-300"
           style={{
             width: '15vw',
             pointerEvents: navVisible ? 'auto' : 'none',
@@ -214,9 +211,7 @@ export default function CaseStudyLayout({
         </nav>
 
         {/* Content */}
-        <main
-          className="flex-1 border-l border-neutral-200 pl-16"
-        >
+        <main className="flex-1 md:border-l md:border-neutral-200 md:pl-16">
           {children}
         </main>
 

@@ -36,9 +36,9 @@ export default function RenoworksPage() {
         <div className="mb-8">
           <div className="border-t border-neutral-200" />
         </div>
-        <div className="flex items-start gap-10">
+        <div className="md:flex items-start gap-10">
           {/* Left: text */}
-          <div className="w-[38%] shrink-0">
+          <div className="md:w-[38%] shrink-0">
             <p>
               The agency lacks a tracking and project organizing tool that would help them track
               different renovation projects happening in the agency.
@@ -52,7 +52,7 @@ export default function RenoworksPage() {
             </ol>
           </div>
           {/* Right: phone mockups */}
-          <div className="flex-1 min-w-0">
+          <div className="md:flex-1 min-w-0">
             <ImageGrid
               cols={2}
               aspect="9/16"
@@ -142,7 +142,7 @@ export default function RenoworksPage() {
             { value: '35%', description: 'Reduced administration overhead: saving $70,000 annually' },
           ]}
         />
-        <div className="mt-100" />
+        <div className="mt-20 md:mt-100" />
         <p>
           If you want to dig deeper in the project and learn more about my design process in
           this project, feel free to{' '}

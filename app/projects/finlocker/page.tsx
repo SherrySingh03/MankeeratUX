@@ -39,25 +39,29 @@ export default function FinLockerPage() {
           <div className="border-t border-neutral-200" />
         </div>
 
-        <p>
+        <div className='md:flex'>
+        <p className="flex-1">
           In today&apos;s fast-paced world, <strong>individuals seek an intuitive way to comprehend their finances</strong>, including budgets and spending habits. They aim to use this knowledge effectively in the pursuit of acquiring their ideal home. Designing information and data in a way that <strong>enables users to make informed decisions</strong> during their home-buying journey was central to this project.
         </p>
-        <ol>
+        <ol className="flex-1">
           <li>Current tools feature <strong>complex and burdensome designs</strong> that compel users to acquire excessive knowledge before they can act.</li>
           <li>There is currently <strong>no comprehensive platform</strong> specifically tailored for first-time homebuyers that bridges financial fitness and mortgage eligibility in one place.</li>
         </ol>
+        </div>  
+        <div className=''>
         <Figure
           src="/projects/finlocker/home-journey.png"
           caption="Interactive home ownership journey"
           fullWidth
         />
+        </div>
       </Section>
 
       <Section id="research" heading="Research">
         <div className="mb-6">
           <div className="border-t border-neutral-200" />
         </div>
-        <div className='flex'>
+        <div className='md:flex'>
         <p>
           Conducted a Heuristic Evaluation to categorize issues in terms of severity and determine which items require immediate attention. The evaluation revealed several critical issues around information architecture, feedback loops, and onboarding clarity.
         </p>
@@ -104,7 +108,7 @@ export default function FinLockerPage() {
         <div className="mb-6">
           <div className="border-t border-neutral-200" />
         </div>
-        <div className='px-10'>
+        <div className='md:px-10'>
         <Carousel
           aspect="16/9"
           images={[
@@ -135,8 +139,11 @@ export default function FinLockerPage() {
       </Section>
 
       <Section id="reflections" heading="Reflections & Results">
+        <div className="mb-6">
+          <div className="border-t border-neutral-200" />
+        </div>          
         {/* Text + award badge side by side */}
-        <div className="flex items-start gap-10 mb-10">
+        <div className="md:flex items-start gap-10 mb-10">
           <div className="flex-1">
             <p>
               The redesign provided users an elevated and beautiful user experience that brought bursts of joy and enthusiasm in every interaction.

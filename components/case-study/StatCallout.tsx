@@ -11,7 +11,7 @@ type Props = {
 export default function StatCallout({ color, stats = [] }: Props) {
   if (!stats.length) return null;
   return (
-    <div className="flex gap-6">
+    <div className="md:flex gap-6">
       {stats.map((stat, i) => (
         <div
           key={i}

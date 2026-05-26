@@ -24,6 +24,7 @@ export default function Carousel({ images = [], aspect = '16/9', cardWidth = '80
           WebkitOverflowScrolling: 'touch',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
+          touchAction: 'pan-x',
         }}
       >
         {images.map((img, i) => (
@@ -41,7 +42,7 @@ export default function Carousel({ images = [], aspect = '16/9', cardWidth = '80
                 src={img.src}
                 alt={img.caption ?? ''}
                 fill
-                className="object-contain p-10"
+                className="object-contain md:p-10 p-2"
                 sizes="60vw"
               />
             </div>

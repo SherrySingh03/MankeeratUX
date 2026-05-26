@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="relative min-h-screen bg-white overflow-hidden flex flex-col">
 
       {/* Header */}
-      <header className="flex items-center justify-between px-10 py-8 shrink-0">
+      <header className="flex items-center justify-between px-5 sm:px-10 py-6 sm:py-8 shrink-0">
         <Link href="/">
           <div
             className="w-5 h-5 rounded-full"
@@ -36,9 +36,9 @@ export default function AboutPage() {
         </div>
       </header>
 
-      {/* Leaf — left */}
+      {/* Leaf — left (desktop only) */}
       <div
-        className="absolute left-0 pointer-events-none select-none"
+        className="hidden md:block absolute left-0 pointer-events-none select-none"
         style={{ top: '28vh', width: '22vw', height: '50vh' }}
       >
         <Image
@@ -50,9 +50,9 @@ export default function AboutPage() {
         />
       </div>
 
-      {/* Leaf — right */}
+      {/* Leaf — right (desktop only) */}
       <div
-        className="absolute right-0 top-20 pointer-events-none select-none"
+        className="hidden md:block absolute right-0 top-20 pointer-events-none select-none"
         style={{ width: '20vw', height: '38vh' }}
       >
         <Image
@@ -65,12 +65,12 @@ export default function AboutPage() {
       </div>
 
       {/* Main */}
-      <main className="flex-1 flex flex-col items-center justify-center px-10 py-16">
+      <main className="flex-1 flex flex-col items-center justify-center px-5 sm:px-10 py-10 sm:py-16">
         <div className="w-full max-w-sm">
 
           {/* Hero text */}
           <h1
-            className="text-4xl text-neutral-800 leading-tight mb-5"
+            className="text-3xl sm:text-4xl text-neutral-800 leading-tight mb-4 sm:mb-5"
             style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif', fontWeight: 400 }}
           >
             hey, i&apos;m{' '}
@@ -78,7 +78,7 @@ export default function AboutPage() {
           </h1>
 
           <p
-            className="text-xl text-neutral-600 leading-relaxed mb-20"
+            className="text-lg sm:text-xl text-neutral-600 leading-relaxed mb-12 sm:mb-20"
             style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
           >
             A{' '}
@@ -95,43 +95,19 @@ export default function AboutPage() {
             Currently playing
           </p>
 
-          <div className="rounded-2xl bg-neutral-100 p-5">
+          <div className="rounded-2xl bg-neutral-100 py-10 px-3">
             {/* Album art */}
             <div
               className="relative w-full rounded-xl overflow-hidden bg-neutral-800 mb-0"
-              style={{ aspectRatio: '4/3' }}
+              style={{ aspectRatio: '5/4' }}
             >
               <Image
                 src="/images/about/courtside.png"
                 alt="Courtside - Karan Aujla"
                 fill
                 className="object-cover"
-                sizes="384px"
+                sizes="(max-width: 640px) 90vw, 384px"
               />
-            </div>
-
-            {/* Track name */}
-            <p
-              className="text-base text-neutral-800 my-4 text-center"
-              style={{ fontFamily: 'var(--font-bitter), Georgia, serif', fontStyle: 'italic' }}
-            >
-              Courtside - Karan Aujla
-            </p>
-
-            {/* Divider */}
-            <div className="border-t border-neutral-200 mb-4" />
-
-            {/* Controls */}
-            <div className="flex items-center justify-center gap-12 text-neutral-600 pb-1">
-              <button aria-label="Previous" className="hover:text-neutral-900 transition-colors text-base leading-none">
-                ◄
-              </button>
-              <button aria-label="Pause" className="hover:text-neutral-900 transition-colors text-xl leading-none tracking-[0.15em]">
-                ❙❙
-              </button>
-              <button aria-label="Next" className="hover:text-neutral-900 transition-colors text-base leading-none">
-                ►
-              </button>
             </div>
           </div>
 
@@ -139,8 +115,8 @@ export default function AboutPage() {
       </main>
 
       {/* Footer */}
-      <footer className="px-10 pb-14 shrink-0">
-        <div className="flex gap-20">
+      <footer className="px-5 sm:px-10 pb-10 sm:pb-14 shrink-0">
+        <div className="flex flex-col gap-8 sm:flex-row sm:gap-20">
 
           {/* Work */}
           <div className="flex-1">
@@ -154,9 +130,9 @@ export default function AboutPage() {
                 { company: 'George Brown College', role: 'UX Designer - 2023' },
                 { company: 'Wongdoody – Infosys', role: 'UX Designer – 2021' },
               ].map(({ company, role }) => (
-                <div key={company} className="flex items-baseline justify-between">
-                  <span className="text-sm font-semibold text-neutral-800">{company}</span>
-                  <span className="text-sm text-neutral-400">{role}</span>
+                <div key={company} className="flex items-baseline justify-between gap-4">
+                  <span className="text-sm font-semibold text-neutral-800 shrink-0">{company}</span>
+                  <span className="text-sm text-neutral-400 text-right">{role}</span>
                 </div>
               ))}
             </div>
@@ -181,13 +157,13 @@ export default function AboutPage() {
                   href: 'https://instagram.com/mankeerat_singh_07',
                 },
               ].map(({ label, display, href }) => (
-                <div key={label} className="flex items-baseline justify-between">
-                  <span className="text-sm text-neutral-400">{label}</span>
+                <div key={label} className="flex items-baseline justify-between gap-4">
+                  <span className="text-sm text-neutral-400 shrink-0">{label}</span>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-neutral-800 hover:text-neutral-400 transition-colors"
+                    className="text-sm text-neutral-800 hover:text-neutral-400 transition-colors text-right break-all"
                     data-cursor="link"
                   >
                     {display}

@@ -122,7 +122,7 @@ export default function RightPanel({ onHover }: Props) {
       ref={wrapperRef}
       className="w-full md:w-1/2 h-screen overflow-hidden bg-white"
     >
-      <div ref={contentRef} className="px-10 py-8">
+      <div ref={contentRef} className="px-5 sm:px-10 py-6 sm:py-8">
         <Nav />
         <IntroSection />
         <motion.div {...fadeUp(0.4)}>

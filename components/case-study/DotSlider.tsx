@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 
 type SlideItem = {
@@ -15,15 +15,32 @@ type Props = {
 
 export default function DotSlider({ images = [], aspect = '16/9' }: Props) {
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef(0);
 
   if (!images.length) return null;
 
+  const prev = () => setCurrent((c) => Math.max(c - 1, 0));
+  const next = () => setCurrent((c) => Math.min(c + 1, images.length - 1));
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? next() : prev();
+    }
+  };
+
   return (
     <div className="my-10">
-      {/* Card — all images stacked, only current is opaque */}
+      {/* Card */}
       <div
-        className="relative w-full rounded-2xl overflow-hidden bg-neutral-100"
-        style={{ aspectRatio: aspect }}
+        className="relative w-full rounded-2xl overflow-hidden bg-neutral-100 cursor-grab active:cursor-grabbing"
+        style={{ aspectRatio: aspect, touchAction: 'pan-y' }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
       >
         {images.map((img, i) => (
           <div
@@ -35,7 +52,7 @@ export default function DotSlider({ images = [], aspect = '16/9' }: Props) {
               src={img.src}
               alt={img.caption ?? ''}
               fill
-              className="object-contain p-8"
+              className="object-contain md:p-8 p-2"
               sizes="(max-width: 768px) 100vw, 720px"
               priority={i === 0}
             />
