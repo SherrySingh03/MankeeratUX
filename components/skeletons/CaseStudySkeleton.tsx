@@ -1,5 +1,7 @@
-function Sk({ className = '' }: { className?: string }) {
-  return <div className={`bg-neutral-200 animate-pulse rounded-xl ${className}`} />;
+import type { CSSProperties } from 'react';
+
+function Sk({ className = '', style }: { className?: string; style?: CSSProperties }) {
+  return <div className={`bg-neutral-200 animate-pulse rounded-xl ${className}`} style={style} />;
 }
 
 export default function CaseStudySkeleton({ color = '#e5e5e5' }: { color?: string }) {
