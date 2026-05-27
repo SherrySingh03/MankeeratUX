@@ -33,8 +33,6 @@ export default function ProjectList({ onHover }: Props) {
           onMouseLeave={handleLeave}
         />
       ))}
-      {/* Bottom border */}
-      {/* <div className="border-t border-neutral-200" /> */}
     </section>
   );
 }

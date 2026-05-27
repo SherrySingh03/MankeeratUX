@@ -24,7 +24,7 @@ function Nav() {
       className="flex items-center justify-between mb-12"
       {...fadeUp(0)}
     >
-      <Image src="/images/homepage/logo.png" width={28} height={28} alt="Mankeerat Singh" className="shrink-0" />
+      <Image src="/images/homepage/logo.png" width={28} height={28} alt="Mankeerat Singh" className="shrink-0 rotate-0 hover:rotate-180 transition duration-300" />
 
       <div className="flex items-center gap-7 text-sm text-neutral-500">
         <Link
@@ -116,7 +116,7 @@ export default function RightPanel({ onHover }: Props) {
   return (
     <div
       ref={wrapperRef}
-      className="w-full md:w-1/2 h-screen overflow-hidden bg-white"
+      className="w-full md:w-1/2 h-screen overflow-y-auto md:overflow-hidden bg-white"
     >
       <div ref={contentRef} className="px-5 sm:px-10 py-6 sm:py-8">
         <Nav />

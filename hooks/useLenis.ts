@@ -12,6 +12,9 @@ export function useLenis(
     const content = contentRef.current;
     if (!wrapper || !content) return;
 
+    // On mobile (<768px) let native scroll handle it; Lenis is desktop-only
+    if (window.innerWidth < 768) return;
+
     const lenis = new Lenis({
       wrapper,
       content,

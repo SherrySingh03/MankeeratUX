@@ -64,7 +64,7 @@ function RowInner({ project, hovered }: { project: Project; hovered: boolean }) 
   );
 }
 
-const sharedClassName = 'block border-t border-neutral-200 rounded-xl';
+const sharedClassName = 'block rounded-xl';
 
 export default function ProjectRow({ project, isBlurred, onMouseEnter, onMouseLeave }: Props) {
   const [hovered, setHovered] = useState(false);
