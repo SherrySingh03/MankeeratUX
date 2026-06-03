@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { bitter, outfit } from '@/app/fonts';
 import CustomCursor from '@/components/CustomCursor';
 import '@/app/globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Mankeerat Singh — UX Designer',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CustomCursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );
