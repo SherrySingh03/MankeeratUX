@@ -62,10 +62,10 @@ export default function CaseStudyLayout({
   }, [sections]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
 
       {/* Top nav */}
-      <header className="flex items-center justify-between px-5 sm:px-10 py-6 sm:py-8">
+      <header className="flex items-center justify-between px-5 sm:px-10 py-6 sm:py-8 ">
         <Link href="/">
           <div
             className="w-5 h-5 rounded-full"
@@ -131,7 +131,7 @@ export default function CaseStudyLayout({
       {/* Description + Role/Stats */}
       <div className="px-5 sm:px-10 mb-12 sm:mb-16 flex flex-col sm:flex-row justify-between gap-6 sm:gap-16">
         <p
-          className="text-lg sm:text-xl text-neutral-600 leading-relaxed"
+          className="text-base sm:text-xl text-neutral-600 leading-[1.5]"
           style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
         >
           {description}
@@ -170,7 +170,7 @@ export default function CaseStudyLayout({
       </div>
 
       {/* Main: sticky nav + content */}
-      <div className="px-5 sm:px-10 flex gap-0 pb-24 sm:pb-40">
+      <div className="px-5 sm:px-10 flex gap-0 pb-16 sm:pb-20">
 
         {/* Sticky nav — desktop only */}
         <nav

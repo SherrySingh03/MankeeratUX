@@ -43,7 +43,7 @@ export default function RenoworksPage() {
               The agency lacks a tracking and project organizing tool that would help them track
               different renovation projects happening in the agency.
             </p>
-            <ol>
+            <ol className='mt-10'>
               <li>Inability to find all project documents in one place.</li>
               <li>
                 Missing key details like tasks, timings and notes while filling paper timesheets.
@@ -92,31 +92,37 @@ export default function RenoworksPage() {
           Mobile app for employees allowed them to easily view the calls for today with vital
           information like address, tasks, timings and issues showcased in each card.
         </p>
+        <div className='mt-10'>
         <ImageGrid
           cols={2}
           aspect="16/10"
+          wideFirst
           images={[
             { src: '/projects/renoworks/admin-dashboard.png', caption: 'Admin Dashboard' },
             { src: '/projects/renoworks/homescreen.png', caption: 'Homescreen' },
           ]}
         />
+        </div>
 
         <h3>Design System</h3>
         <p>
           To ensure consistency of design elements across platforms, we implemented a design
           system that would also help future designers and developers in the project.
         </p>
+        <div className='mt-10'>
         <ImageGrid
           cols={2}
           aspect="16/10"
+          wideFirst
           images={[
             { src: '/projects/renoworks/project-creation.png', caption: 'Project Creation' },
             { src: '/projects/renoworks/filters.png', caption: 'Filters' },
           ]}
         />
+        </div>
         <Carousel
           aspect="9/16"
-          cardWidth="32%"
+          cardWidth="35%"
           images={[
             { src: '/projects/renoworks/carousel/step-1.png', caption: 'Step 1: Create a service call' },
             { src: '/projects/renoworks/carousel/step-2.png', caption: 'Step 2: Select service' },
@@ -135,6 +141,7 @@ export default function RenoworksPage() {
           efficiently and also led to accurate billing of clients, significantly impacting
           business growth and client satisfaction.
         </p>
+        <div className='mt-10'>
         <StatCallout
           color="#5540FF"
           stats={[
@@ -142,7 +149,9 @@ export default function RenoworksPage() {
             { value: '35%', description: 'Reduced administration overhead: saving $70,000 annually' },
           ]}
         />
-        <div className="mt-20 md:mt-100" />
+        </div>
+        <div className="mt-16" />
+        <div className='p-8 rounded-2xl' style={{ backgroundColor: '#f5f5f5' }}>
         <p>
           If you want to dig deeper in the project and learn more about my design process in
           this project, feel free to{' '}
@@ -156,6 +165,7 @@ export default function RenoworksPage() {
           </a>{' '}
           with me.
         </p>
+        </div>
       </Section>
 
     </CaseStudyLayout>

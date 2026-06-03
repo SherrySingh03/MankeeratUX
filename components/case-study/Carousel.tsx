@@ -16,9 +16,9 @@ export default function Carousel({ images = [], aspect = '16/9', cardWidth = '80
   if (!images.length) return null;
 
   return (
-    <div className="mt-10">
+    <div className="mt-6">
       <div
-        className="flex gap-5 overflow-x-auto pb-6"
+        className="flex gap-5 overflow-x-auto py-6"
         style={{
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
@@ -49,14 +49,19 @@ export default function Carousel({ images = [], aspect = '16/9', cardWidth = '80
 
             {/* Text below card */}
             {img.caption && (
-              <figcaption className="mt-4 text-base font-semibold text-neutral-800 text-center">
+              <figcaption className="mt-4 text-lg font-semibold text-neutral-800" style={{textAlign: img.description ? 'left': 'center'}}>
                 {img.caption}
               </figcaption>
             )}
             {img.description && (
-              <p className="mt-1 text-sm text-neutral-500 leading-relaxed text-center">
+              <div>
+                <div className="my-2">
+                  <div className="border-t border-neutral-200" />
+              </div>
+              <p className="mt-1 text-sm text-neutral-500 leading-relaxed text-start">
                 {img.description}
               </p>
+              </div>
             )}
           </figure>
         ))}

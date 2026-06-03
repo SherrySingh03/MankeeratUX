@@ -20,7 +20,7 @@ export default function Section({ id, label, heading, children }: Props) {
   return (
     <motion.section
       id={sectionId}
-      className="mb-28 scroll-mt-5"
+      className="mb-15 scroll-mt-5"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-8%' }}
@@ -44,11 +44,11 @@ export default function Section({ id, label, heading, children }: Props) {
 
       <div
         className="
-          [&_p]:text-lg [&_p]:leading-[1.75] [&_p]:text-neutral-600 [&_p]:mb-6
+          [&_p]:text-base [&_p]:leading-[1.5] [&_p]:text-neutral-600
           [&_strong]:font-semibold [&_strong]:text-neutral-800
           [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-6
           [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-6
-          [&_li]:mb-2 [&_li]:text-lg [&_li]:leading-[1.75] [&_li]:text-neutral-600
+          [&_li]:mb-2 [&_li]:text-base [&_li]:leading-[1.5] [&_li]:text-neutral-600
           [&_a]:underline [&_a]:underline-offset-2 [&_a]:text-neutral-800
           [&_h3]:text-xl [&_h3]:font-medium [&_h3]:text-neutral-800 [&_h3]:mt-12 [&_h3]:mb-6
         "

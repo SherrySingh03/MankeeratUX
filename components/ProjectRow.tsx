@@ -21,8 +21,8 @@ function RowInner({ project, hovered }: { project: Project; hovered: boolean }) 
         transition={{ duration: 0.2, ease: [0.25, 0.6, 0.25, 1] }}
       >
         <motion.span
-          className="text-2xl shrink-0"
-          style={{ fontFamily: 'Castoro, serif', fontStyle: 'italic' }}
+          className="text-xl shrink-0"
+          style={{ fontFamily: 'Castoro, serif' }}
           animate={{ color: hovered ? project.color : '#171717' }}
           transition={{ duration: 0.2 }}
         >

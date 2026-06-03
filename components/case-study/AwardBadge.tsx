@@ -7,7 +7,7 @@ type Props = {
 
 export default function AwardBadge({ image, caption }: Props) {
   return (
-    <figure className="inline-flex items-center gap-3 bg-neutral-100 rounded-full px-5 py-3">
+    <figure className="inline-flex items-center gap-3 bg-neutral-100 rounded-xl px-5 py-3">
       <div className="relative w-11 h-11 shrink-0">
         <Image
           src={image}

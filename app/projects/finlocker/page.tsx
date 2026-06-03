@@ -39,11 +39,11 @@ export default function FinLockerPage() {
           <div className="border-t border-neutral-200" />
         </div>
 
-        <div className='md:flex'>
-        <p className="flex-1">
+        <div className=''>
+        <p className="">
           In today&apos;s fast-paced world, <strong>individuals seek an intuitive way to comprehend their finances</strong>, including budgets and spending habits. They aim to use this knowledge effectively in the pursuit of acquiring their ideal home. Designing information and data in a way that <strong>enables users to make informed decisions</strong> during their home-buying journey was central to this project.
         </p>
-        <ol className="flex-1">
+        <ol className="mt-10">
           <li>Current tools feature <strong>complex and burdensome designs</strong> that compel users to acquire excessive knowledge before they can act.</li>
           <li>There is currently <strong>no comprehensive platform</strong> specifically tailored for first-time homebuyers that bridges financial fitness and mortgage eligibility in one place.</li>
         </ol>
@@ -66,7 +66,7 @@ export default function FinLockerPage() {
           Conducted a Heuristic Evaluation to categorize issues in terms of severity and determine which items require immediate attention. The evaluation revealed several critical issues around information architecture, feedback loops, and onboarding clarity.
         </p>
         <StatCallout
-          color="#5BCB6E"
+          color="#F88634"
           stats={[
             {
               value: '60%',
@@ -96,6 +96,7 @@ export default function FinLockerPage() {
         <p>
           To build more coherent, hierarchical, and structured interfaces, we incorporated the principles of atomic design into our design system. Each component was built from the ground up — atoms to organisms — ensuring visual consistency across every screen.
         </p>
+        <div className='mt-10'>
         <ImageGrid
           cols={3}
           images={[
@@ -104,11 +105,12 @@ export default function FinLockerPage() {
             { src: '/projects/finlocker/credit-card.png', caption: 'Credit health card' },
           ]}
         />
-        <h3 className='text-center' style={{ fontSize: "2.5rem"}}>Our favourites</h3>
-        <div className="mb-6">
+        </div>
+        <h3 className='text-start' style={{ fontSize: "2.5rem"}}>Our favourites</h3>
+        <div className="mb-2">
           <div className="border-t border-neutral-200" />
         </div>
-        <div className='md:px-10'>
+        <div className='  '>
         <Carousel
           aspect="16/9"
           images={[
@@ -152,7 +154,7 @@ export default function FinLockerPage() {
               The new design profited the organization in various aspects from increased signups, increased user retention, engagement and increased visibility by winning bagging iF Design Award.
             </p>
           </div>
-          <div className="shrink-0 pt-1">
+          <div className="shrink-0 pt-5 text-center md:pt-1">
             <AwardBadge
               image="/projects/finlocker/if-award.png"
               caption="iF Design award winner 2023"
@@ -171,6 +173,7 @@ export default function FinLockerPage() {
 
         <div className="border-t border-neutral-200 my-10" />
 
+        <div className='rounded-2xl p-8' style={{backgroundColor: '#f5f5f5'}}>
         <p>
           If you want to dig deeper in the project and learn more about my design process in this project, feel free to{' '}
           <a
@@ -183,6 +186,7 @@ export default function FinLockerPage() {
           </a>{' '}
           with me.
         </p>
+        </div>
       </Section>
 
     </CaseStudyLayout>

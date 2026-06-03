@@ -57,7 +57,7 @@ function IntroSection() {
           {/* Name hover: English ↔ Punjabi */}
           <div className="group relative cursor-default mb-1 select-none">
             <h1
-              className="text-3xl font-bold leading-tight
+              className="text-2xl font-bold leading-tight
                         opacity-100 group-hover:opacity-0
                         transition-opacity duration-300 pointer-events-none"
               style={{ fontFamily: 'var(--font-bitter), Georgia, serif' }}
@@ -68,7 +68,7 @@ function IntroSection() {
             {/* Punjabi overlay — fades in on hover */}
             <h1
               className="
-                text-3xl font-bold leading-tight
+                text-2xl font-bold leading-tight
                 absolute top-0 left-0
                 opacity-0 group-hover:opacity-100
                 transition-opacity duration-300 pointer-events-none
@@ -105,25 +105,32 @@ type Props = {
 };
 
 export default function RightPanel({ onHover }: Props) {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const listContentRef = useRef<HTMLDivElement>(null);
 
   useLenis(
-    wrapperRef as React.RefObject<HTMLElement | null>,
-    contentRef as React.RefObject<HTMLElement | null>
+    listRef as React.RefObject<HTMLElement | null>,
+    listContentRef as React.RefObject<HTMLElement | null>
   );
 
   return (
-    <div
-      ref={wrapperRef}
-      className="w-full md:w-1/2 h-screen overflow-y-auto md:overflow-hidden bg-white"
-    >
-      <div ref={contentRef} className="px-5 sm:px-10 py-6 sm:py-8">
+    <div className="w-full md:w-1/2 h-screen flex flex-col bg-white">
+      {/* Fixed header */}
+      <div className="px-5 sm:px-10 py-6 sm:py-8 shrink-0">
         <Nav />
         <IntroSection />
-        <motion.div {...fadeUp(0.4)}>
-          <ProjectList onHover={onHover} />
-        </motion.div>
+      </div>
+
+      {/* Scrollable project list */}
+      <div
+        ref={listRef}
+        className="flex-1 overflow-y-auto md:overflow-hidden px-5 sm:px-10 pb-8"
+      >
+        <div ref={listContentRef}>
+          <motion.div {...fadeUp(0.4)}>
+            <ProjectList onHover={onHover} />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
