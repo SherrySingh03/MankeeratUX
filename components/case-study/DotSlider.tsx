@@ -37,7 +37,7 @@ export default function DotSlider({ images = [], aspect = '16/9' }: Props) {
     <div className="my-10">
       {/* Card */}
       <div
-        className="relative w-full rounded-2xl overflow-hidden bg-neutral-100 cursor-grab active:cursor-grabbing"
+        className="relative w-full rounded-2xl overflow-hidden bg-neutral-100 cursor-grab active:cursor-grabbing group"
         style={{ aspectRatio: aspect, touchAction: 'pan-y' }}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
@@ -58,6 +58,33 @@ export default function DotSlider({ images = [], aspect = '16/9' }: Props) {
             />
           </div>
         ))}
+
+        {images.length > 1 && (
+          <>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={prev}
+              disabled={current === 0}
+              className="absolute left-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-md opacity-0 transition-opacity group-hover:opacity-100 hover:bg-white disabled:opacity-0 disabled:pointer-events-none"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={next}
+              disabled={current === images.length - 1}
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-md opacity-0 transition-opacity group-hover:opacity-100 hover:bg-white disabled:opacity-0 disabled:pointer-events-none"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </>
+        )}
       </div>
 
       {/* Caption */}
