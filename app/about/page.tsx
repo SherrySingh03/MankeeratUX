@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About — Mankeerat Singh',
-  description: 'UX designer, researcher and design strategist based in Toronto.',
+  description: 'UX designer, researcher and design strategist based in Montreal.',
 };
 
 export default function AboutPage() {
@@ -83,7 +83,7 @@ export default function AboutPage() {
           >
             A{' '}
             <em style={{ fontFamily: 'var(--font-bitter), Georgia, serif' }}>UX</em>{' '}
-            designer, researcher and design strategist based in toronto and I design experiences
+            designer, researcher and design strategist based in montreal and I design experiences
             that make people smile.
           </p>
 

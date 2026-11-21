@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Mankeerat Singh — UX Designer',
-  description: 'Portfolio of Mankeerat Singh, UX Designer based in Toronto, Canada.',
+  description: 'Portfolio of Mankeerat Singh, UX Designer based in Montreal, Canada.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

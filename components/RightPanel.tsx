@@ -93,7 +93,7 @@ function IntroSection() {
           {...fadeUp(0.2)}
         >
           <p className="text-sm text-neutral-400">currently</p>
-          <p className="text-sm text-neutral-500">Toronto, Canada</p>
+          <p className="text-sm text-neutral-500">Montreal, Canada</p>
         </motion.div>
       </div>
     </section>
